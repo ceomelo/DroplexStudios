@@ -7,87 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="logoguia.webp" type="image/png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(112.1deg, #0f2027 0%, #203a43 51%, #2c5364 100%);
-            background-size: 200% 200%;
-            animation: gradient 15s ease infinite;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 50%;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            border-radius: 2px;
-        }
-
-        .card-transition {
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease-out;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #8b5cf6;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        .testimonial-card {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -162,47 +82,6 @@
             </div>
         </div>
     </section>
-    <style>
-        @keyframes blob {
-            0% { 
-                transform: translate(0px, 0px) scale(1) rotate(0deg);
-                opacity: 0.7;
-            }
-            33% { 
-                transform: translate(30px, -50px) scale(1.1) rotate(5deg);
-                opacity: 0.8;
-            }
-            66% { 
-                transform: translate(-20px, 20px) scale(0.9) rotate(-5deg);
-                opacity: 0.6;
-            }
-            100% { 
-                transform: translate(0px, 0px) scale(1) rotate(0deg);
-                opacity: 0.7;
-            }
-        }
-        
-        .animate-blob {
-            animation: blob 8s infinite ease-in-out;
-            will-change: transform;
-        }
-        
-        .animation-delay-2000 {
-            animation-delay: 2.5s;
-        }
-        
-        .animation-delay-4000 {
-            animation-delay: 5s;
-        }
-
-        .hover-grow {
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        .hover-grow:hover {
-            transform: scale(1.05);
-            opacity: 0.95;
-        }
-    </style>
     <!-- Quem Somos Section -->
     <section id="quem-somos" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -810,42 +689,7 @@
             </div>
         </div>
     </footer>
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-
-        // Form submission
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would normally send the form data to a server
-                alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
-                form.reset();
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
